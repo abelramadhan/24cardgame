@@ -1,8 +1,50 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { useEffect, useState } from 'react';
+import { SocketContext, socket, setUser, getUser } from './context/socketContext';
+import MainMenu from './components/mainMenu';
+import Lobby from './components/lobby';
+import { ToastContainer, toast } from 'react-toastify';
+import User from './dataClass/user';
 
 export default function Home() {
+  const [gameState, setGameState] = useState('mainMenu');
+
+  useEffect(() => {
+    socketInitializer();
+  }, []);
+
+  const socketInitializer = () => {
+
+    socket.on("setGameState", (state) => {
+      setGameState(state);
+    });
+
+    socket.on("receiveMsg", (msg) => {
+      console.log(msg);
+    });
+
+    socket.on("alert", (msg) => {
+      toast.error(msg);
+    });
+
+  }
+
+  //create user object to store to localstorage
+  const renderGameState = () => {
+    switch (gameState) {
+      case 'mainMenu':
+        return(
+          <MainMenu></MainMenu>
+        )
+      case 'lobby':
+        return(
+          <Lobby></Lobby>
+        )
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,44 +54,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <SocketContext.Provider value={{socket: socket, getUser: getUser, setUser: setUser}}>
+          {renderGameState()}
+        </SocketContext.Provider>
       </main>
 
       <footer className={styles.footer}>
@@ -64,6 +71,18 @@ export default function Home() {
           </span>
         </a>
       </footer>
+      <ToastContainer
+          theme='dark'
+          position="top-center"
+          autoClose={700}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+        />
     </div>
   )
 }

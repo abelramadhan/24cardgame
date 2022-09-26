@@ -1,0 +1,70 @@
+.container {
+    width: 600px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.roomInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.roomInfo h3 {
+    color: var(--accent);
+}
+
+.roomInfo h1 {
+    font-family: var(--poppins);
+    font-weight: 800;
+    font-size: 64px;
+    margin: -12px 0px;
+}
+
+.roomUsers ol {
+    margin-top: 8px;
+    list-style-position: inside;
+}
+
+.roomUsers h3 {
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.buttons button {
+    background-color: var(--accent);
+    width: fit-content;
+    border: none;
+    padding: 4px 24px 6px 24px;
+    font-size: medium;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.buttons .primaryBtn:hover {
+    background-color: var(--accent2);
+}
+
+.buttons .secondaryBtn {
+    background-color: var(--primary);
+    border: var(--accent) 1px solid;
+}
+
+.buttons .secondaryBtn:hover {
+    background-color: var(--accent3);
+}
+
+.buttons .disabledBtn {
+    background-color: var(--secondary);
+    cursor: default;
+}

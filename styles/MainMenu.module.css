@@ -1,0 +1,89 @@
+.title {
+    margin-bottom: 48px;
+}
+
+.title h1, .title span{
+    font-family:  var(--poppins);
+    font-size: 60px;
+    text-align: center;
+    line-height: 0.9;
+    font-weight: 800;
+}
+
+.title .number{
+    font-size: 108px;
+    color: var(--accent);
+}
+
+.title .card {
+    font-size: 48px;
+}
+
+.title .game {
+    font-size: 90px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    border: 1px var(--secondary) solid;
+    width: 380px;
+}
+
+.menu .tabs {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.menu .tabs {
+    width: 100%;
+}
+
+.menu .tabs button {
+    width: 50%;
+    background-color: var(--primary);
+    border: none;
+    border-bottom: var(--secondary) 1px solid;
+    padding: 8px 4px;
+    font-size: large;
+}
+
+.menu .tabs .active {
+    width: 50%;
+    border-bottom: var(--accent) 1px solid;
+}
+
+.menu input {
+    width: 100%;
+}
+
+.menu .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.menu .form .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu .form .inputs input{
+    padding: 4px 8px;
+}
+
+.menu .form button{
+    background-color: var(--accent);
+    border: none;
+    padding: 4px;
+    font-size: medium;
+    border-radius: 2px;
+    margin-top: 16px;
+}
+
+.menu .form button:hover{
+    background-color: var(--accent2);
+}
