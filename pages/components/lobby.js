@@ -13,6 +13,7 @@ export default function Lobby() {
 
     useEffect(() => {
         socketInitializer();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     const socketInitializer = () => {
@@ -24,6 +25,7 @@ export default function Lobby() {
             setIsHost((room.hostID === user.id) ? true : false)
         });
 
+        
     }
 
     const getUserList = () => {

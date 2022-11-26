@@ -14,6 +14,7 @@ export default function GameOver() {
         socketInitializer();
         socket.emit('reqRoomObj');
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     

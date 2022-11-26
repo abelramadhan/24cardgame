@@ -39,7 +39,7 @@ export default function Game() {
 
         setTimeout(reqCards, 2000)
         
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     const reqCards = () => {
@@ -208,7 +208,7 @@ export default function Game() {
                 <h3>solution steps :</h3>
                 {inputStep.stepList.map((step, index) => {
                     return (
-                        <div className={styles.step}>
+                        <div key={index} className={styles.step}>
                             <Card value={step.operand1} extraClass={['stepItem', 'inactive']}></Card>
                             <h2>{step.operator}</h2>
                             <Card value={step.operand2} extraClass={['stepItem', 'inactive']}></Card>
