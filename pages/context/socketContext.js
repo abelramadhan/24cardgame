@@ -7,7 +7,7 @@ let user = new User('');
 
 const initServer = async () => {
     await fetch('http://localhost:3000/api/socket');
-    socket = io();
+    socket = io({forceNew: false});
 
     socket.on('connect', () => {
         console.log('connected');

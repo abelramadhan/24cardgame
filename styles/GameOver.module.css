@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 300px;
+}
+
+.winnerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.winnerInfo h1 {
+    font-size: 4rem;
+    font-family: var(--poppins);
+    font-weight: 800;
+}
+
+.winnerInfo h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+}
+
+.buttonsContainer button {
+    flex-grow: 1;
+    background-color: transparent;
+    border: var(--accent) 1px solid;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.buttonsContainer button:hover {
+    cursor: pointer;
+    background-color: var(--accent3);
+}
+
+.leaderboard {
+    width: 100%;
+    height: 300px;
+    border: var(--secondary) 1px solid;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.leaderboard table {
+    text-align: left;
+    width: 100%;
+}
+
+.leaderboard table tr {
+    height: fit-content;
+}
+
+.leaderboard table th, .container table td {
+    padding: 8px;
+}
+
+.leaderboard table thead th{
+    border-bottom: var(--accent) 1px solid;
+}

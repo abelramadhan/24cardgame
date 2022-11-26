@@ -1,0 +1,230 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+.userList {
+    border-right: var(--accent) 1px solid;
+    flex-grow: 1;
+    height: 100%;
+    padding: 20px 20px 20px 60px;
+}
+
+.userList table {
+    text-align: left;
+    width: 100%;
+}
+
+.userList tr {
+    height: 30px;
+}
+
+.userList th {
+    color: var(--accent);
+    font-size: larger;
+}
+
+.userList td, .userList th {
+    padding: 4px 0px;
+}
+
+.roomInfo {
+    text-align: left;
+    margin: 32px 0px;
+}
+
+.roomInfo .roomID {
+    font-family: var(--poppins);
+    font-size: 54px;
+    font-weight: 800;
+}
+
+.cardSet {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 5% 10%;
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--primary);
+    font-family: var(--poppins);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px var(--accent) solid;
+    font-size: 56px;
+}
+
+.mainCard {
+}
+
+.active {
+    border: 4px var(--accent) solid;
+}
+
+.inactive {
+    border: 1px var(--secondary) solid;
+    cursor: default;
+}
+
+.default:hover {
+    background-color: var(--accent3);
+}
+
+.gameContainer {
+    height: 100%;
+    flex-grow: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.gameContainer .top {
+    height: 60%;
+    width: 100%;
+    border-bottom: 1px var(--secondary) solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer .bottom {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stepList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    width: 480px;
+    padding: 30px;
+    border-right: 1px solid var(--secondary);
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    height: 33%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.step h2 {
+    font-size: 2rem;
+}
+
+.stepItem {
+    width: 88px;
+    height: 100%;
+    font-size: 1.2rem;
+}
+
+.operatorsContainer {
+    height: 100%;
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-right: 1px solid var(--secondary);
+}
+
+.operatorsGrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.operator {
+    font-size: 2rem;
+    height: auto;
+    width: auto;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    padding: 30px;
+    flex-grow: 1;
+    gap: 16px;
+}
+
+.buttonContainer > * {
+    flex-grow: 1;
+}
+
+.buttonContainer .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.buttonContainer .buttonGroup button{
+    flex-grow: 1;
+}
+
+.buttonContainer button {
+    background-color: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-size: 1.5rem;
+}
+
+.buttonContainer button:hover:not(.unfinish, .finish) {
+    background-color: var(--accent3);
+    cursor: pointer;
+}
+
+.buttonContainer .unfinish {
+    border: 1px solid var(--secondary);
+}
+
+.buttonContainer .finish {
+    border: 1px solid #63bd1a;
+}
+
+.buttonContainer .finish:hover {
+    background-color: #63bd1a;
+}
+
+.timer {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.timer h2 {
+    font-size: 1rem;
+}
+
+.timer h3{
+    font-size: 4rem;
+}
+

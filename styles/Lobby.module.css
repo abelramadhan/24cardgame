@@ -68,3 +68,79 @@
     background-color: var(--secondary);
     cursor: default;
 }
+
+.switch {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.switch h3 {
+    font-weight: 400;
+    font-size: medium;
+    padding-bottom: 4px;
+}
+
+.switchButton {
+    border: var(--accent) 1px solid;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 48px;
+    text-align: center;
+    font-size: smaller;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 2px 22px 2px 2px;
+    position: relative;
+  }
+  .switchButton:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .switchButtonCheckbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+  }
+  .switchButtonCheckbox:checked + .switchButtonLabel:before {
+    transform: translateX(19px);
+    transition: transform 300ms;
+  }
+  .switchButtonCheckbox + .switchButtonLabel {
+    position: relative;
+    padding: 8px;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+  .switchButtonCheckbox + .switchButtonLabel:before {
+    content: "";
+    background: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+  .switchButtonCheckbox + .switchButtonLabel .switchButtonLabelSpan {
+    position: relative;
+  }

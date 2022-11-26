@@ -6,6 +6,9 @@ import styles from '/styles/Lobby.module.css';
 export default function Lobby() {
     const { socket, getUser, setUser } = useContext(SocketContext);
     const [roomObj, setRoomObj] = useState(new Room(''))
+    const [isHost, setIsHost] = useState(false)
+    const [easyMode, setEasyMode] = useState(true)
+
     const user = getUser();
 
     useEffect(() => {
@@ -17,8 +20,8 @@ export default function Lobby() {
         socket.emit('reqRoomObj');
 
         socket.on('syncRoomObj', (room) => {
-            console.log(room)
-            setRoomObj(room);    
+            setRoomObj(room);
+            setIsHost((room.hostID === user.id) ? true : false)
         });
 
     }
@@ -38,11 +41,12 @@ export default function Lobby() {
     }
 
     const startGame = () => {
-        socket.emit('startGame');
+        console.log('starting game')
+        socket.emit('startGame', easyMode);
     }
 
     const getPlayButton = () => {
-        if (roomObj.hostID === user.id) {
+        if (isHost) {
             return <button className={styles.primaryBtn} onClick={startGame}>Start Game</button>
         } else {
             return <button className={styles.disabledBtn}>Waiting For Host</button>
@@ -51,6 +55,10 @@ export default function Lobby() {
 
     const leaveRoom = () => {
         location.reload()
+    }
+
+    const toggleMode = () => {
+        setEasyMode(!easyMode)
     }
 
     return (
@@ -67,11 +75,25 @@ export default function Lobby() {
                     </ol>
                 </div>
             </div>
-            
-            <div className={styles.buttons}>
-                {getPlayButton()}
-                <button className={styles.secondaryBtn} onClick={leaveRoom}>Leave Room</button>
+
+            <div>
+                {isHost &&
+                <div className={styles.switch}>
+                    <div className={styles.switchButton}>
+                        <input className={styles.switchButtonCheckbox} onClick={toggleMode} type="checkbox"></input>
+                        <label className={styles.switchButtonLabel}><span className={styles.switchButtonLabelSpan}></span></label>
+                    </div>
+                    <h3>easy mode</h3>
+                </div>
+                }
+                
+                
+                <div className={styles.buttons}>
+                    {getPlayButton()}
+                    <button className={styles.secondaryBtn} onClick={leaveRoom}>Leave Room</button>
+                </div>
             </div>
+            
 
         </div>
     )
