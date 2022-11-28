@@ -1,9 +1,7 @@
-import { Room } from '../dataClass/room';
 import Leaderboard from './gameComponents/leaderboard'
 import { useState, useContext, useEffect } from 'react';
-import { SocketContext } from '../context/socketContext';
+import { SocketContext } from '/context/socketContext';
 import styles from '/styles/GameOver.module.css';
-import User from '../dataClass/user';
 
 export default function GameOver() {
     const { socket, getUser } = useContext(SocketContext);

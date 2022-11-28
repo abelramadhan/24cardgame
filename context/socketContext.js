@@ -1,4 +1,4 @@
-import User from '../dataClass/user'
+import User from '/dataClass/user'
 import { io } from "socket.io-client";
 import { createContext } from "react";
 
@@ -6,7 +6,7 @@ let socket;
 let user = new User('');
 
 const initServer = async () => {
-    await fetch('http://cardgame24.herokuapp.com/api/socket');
+    await fetch(`${process.env.SOCKET_URL}/api/socket`);
     socket = io({forceNew: false});
 
     socket.on('connect', () => {

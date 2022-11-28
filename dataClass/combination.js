@@ -63,6 +63,4 @@ class CardCombination {
 
 }
 
-export {
-    CardCombination
-}
+export { CardCombination }

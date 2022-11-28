@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
-import { SocketContext } from '../context/socketContext';
+import { SocketContext } from '/context/socketContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from '/styles/MainMenu.module.css';

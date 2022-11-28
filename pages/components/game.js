@@ -1,10 +1,10 @@
 import { useState, useContext, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useTimer } from 'react-timer-hook';
-import { SocketContext } from '../context/socketContext';
-import { StepManager } from '../dataClass/inputStep';
-import { Room } from '../dataClass/room';
-import { CardObject } from '../dataClass/cardManager';
+import { SocketContext } from '/context/socketContext';
+import { StepManager } from '/dataClass/inputStep';
+import { Room } from '/dataClass/room';
+import { CardObject } from '/dataClass/cardManager';
 import Leaderboard from './gameComponents/leaderboard'
 import Card from './gameComponents/card';
 import styles from '/styles/Game.module.css';

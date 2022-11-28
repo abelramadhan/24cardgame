@@ -1,8 +1,6 @@
 import { Server } from 'socket.io';
-import User from '../dataClass/user';
-import { RoomManager } from '../dataClass/room'
-import { CardCombination } from '../dataClass/combination';
-import { socket } from '../context/socketContext';
+import { RoomManager } from '/dataClass/room'
+import { CardCombination } from '/dataClass/combination';
 
 const SocketHandler = (req, res) => {
   if (res.socket.server.io) {

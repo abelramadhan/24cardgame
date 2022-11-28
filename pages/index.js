@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
-import { SocketContext, socket, setUser, getUser } from './context/socketContext';
+import { SocketContext, socket, setUser, getUser } from '/context/socketContext';
 import MainMenu from './components/mainMenu';
 import Lobby from './components/lobby';
 import Game from './components/game';

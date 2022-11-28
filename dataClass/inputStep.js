@@ -1,5 +1,5 @@
 import {evaluate} from 'mathjs'
-import { CardObject } from '../dataClass/cardManager';
+import { CardObject } from '/dataClass/cardManager';
 
 class Step {
     constructor(operand1, operator, operand2) {

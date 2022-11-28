@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
-import { SocketContext } from '../context/socketContext';
-import { Room } from '../dataClass/room';
+import { SocketContext } from '/context/socketContext';
+import { Room } from '/dataClass/room';
 import styles from '/styles/Lobby.module.css';
 
 export default function Lobby() {
