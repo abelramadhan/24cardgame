@@ -1,4 +1,4 @@
-const solve24 = require('C:/Users/abelramadhan/Documents/skripshit/24cardgame/node_modules/24game-solver/dist/24game-solver');
+const solve24 = require('/node_modules/24game-solver/dist/24game-solver');
 const additon = new RegExp('[+]', 'g');
 const subtraction = new RegExp('[-]', 'g');
 const multiplacation = new RegExp('[*]', 'g');
