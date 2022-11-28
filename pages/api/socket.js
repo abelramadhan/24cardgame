@@ -1,4 +1,4 @@
-import { Server } from 'Socket.IO';
+import { Server } from 'socket.io';
 import User from '../dataClass/user';
 import { RoomManager } from '../dataClass/room'
 import { CardCombination } from '../dataClass/combination';
