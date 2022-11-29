@@ -4,11 +4,13 @@ import { createContext } from "react";
 
 let socket;
 let user = new User('');
+const IS_PROD = process.env.NODE_ENV === "production";
+const URL = IS_PROD ? "cardgame24.herokuapp.com" : "http://localhost:3000";
 
 const initServer = async () => {
-    console.log(process.env.PORT || 80)
-    await fetch(`https:/cardgame24.herokuapp.com:443/api/socket`);
-    socket = io();
+    
+    await fetch(`${URL}/api/socket`);
+    socket = io(URL);
 
     socket.on('connect', () => {
         console.log('connected');
