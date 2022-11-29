@@ -6,8 +6,9 @@ let socket;
 let user = new User('');
 
 const initServer = async () => {
+    console.log(process.env.PORT || 80)
     await fetch(`${process.env.SOCKET_URL}/api/socket`);
-    socket = io({forceNew: false});
+    socket = io(`${process.env.SOCKET_URL}`);
 
     socket.on('connect', () => {
         console.log('connected');
