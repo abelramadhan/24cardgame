@@ -7,8 +7,8 @@ let user = new User('');
 
 const initServer = async () => {
     console.log(process.env.PORT || 80)
-    await fetch(`${process.env.SOCKET_URL}/api/socket`);
-    socket = io(`${process.env.SOCKET_URL}`);
+    await fetch(`https:/cardgame24.herokuapp.com:443/api/socket`);
+    socket = io();
 
     socket.on('connect', () => {
         console.log('connected');
