@@ -5,10 +5,10 @@ import { createContext } from "react";
 let socket;
 let user = new User('');
 const IS_PROD = process.env.NODE_ENV === "production";
-const URL = IS_PROD ? "cardgame24.herokuapp.com" : "http://localhost:3000";
+const URL = IS_PROD ? "" : "http://localhost:3000";
 
 const initServer = async () => {
-    
+    console.log(URL)
     await fetch(`${URL}/api/socket`);
     socket = io(URL);
 
